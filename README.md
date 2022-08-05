@@ -70,6 +70,17 @@ Operands Prompt: /
 =>  1.7999999523162842
 ```
 
+To exit the operands prompt, type `exit`.
+
+```bash
+> example-grpc-rpn-calculator@1.0.0 client
+> node src/client/app.js
+
+Operands Prompt: exit
+
+Shutdown...
+```
+
 ### Testing
 
 Included integration tests to calls to the server functions from the client are working as intended.  Before executing tests, start an instance of the server (i.e, `npm run server`) in a terminal window and in another window, execute `npm run test`.  TODO:  Make the test dependent on an HTTP producer so that we can use [Chai's][https://www.chaijs.com/] `request()` behavior to eliminate dependency on a separate running instance of the server.

@@ -1,3 +1,4 @@
+const { rawListeners } = require('process');
 const { createInterface } = require('readline');
 
 const Lexer = require('./lexer');
@@ -15,6 +16,8 @@ const rpnCalculator = rpn();
 
 readline
   .on('line', async (line) => {
+    if(line === 'exit') { readline.close(); return; }
+
     try {
       const tokens = new Lexer(line).tokenize();
       const result = await rpnCalculator.execute(tokens);

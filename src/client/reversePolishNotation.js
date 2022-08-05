@@ -46,7 +46,6 @@ module.exports = (stack = []) => {
                         return data.value;
                     });
                 }
-                if (operand[0] === 'q') return null; // todo: end application stack.push(operand);
                 if (operand[0] === 's') return stack;
             stack.push(operand);
             return operand;
