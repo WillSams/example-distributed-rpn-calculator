@@ -73,11 +73,17 @@ class Lexer {
     }
   }
 
-  isNumber(el) { return /^[0-9.]$/.test(el); }
+  isNumber(el) {
+    return /^[0-9.]$/.test(el);
+  }
 
-  isSpace(el) {  return /\s/.test(el); }
+  isSpace(el) {
+    return /\s/.test(el);
+  }
 
-  isSymbol(el) { return allowedSymbols.includes(el); }
+  isSymbol(el) {
+    return allowedSymbols.includes(el);
+  }
 }
 
 module.exports = Lexer;
