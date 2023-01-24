@@ -16,7 +16,10 @@ const rpnCalculator = rpn();
 
 readline
   .on('line', async (line) => {
-    if(line === 'exit') { readline.close(); return; }
+    if (line === 'exit') {
+      readline.close();
+      return;
+    }
 
     try {
       const tokens = new Lexer(line).tokenize();

@@ -12,35 +12,35 @@ const port = process.env.PRODUCER_PORT;
 const server = new grpc.Server();
 
 server.addService(calculator.CalculatorService.service, {
-    add: (root, callback) => {
-        const result = add(root.request.operand1, root.request.operand2);
-        callback(null, { value: result });
-    },
-    divide: (root, callback) => {
-        const result = divide(root.request.operand1, root.request.operand2);
-        callback(null, { value: result });
-    },
-    multiply: (root, callback) => {
-        const result = multiply(root.request.operand1, root.request.operand2);
-        callback(null, { value: result });
-    },
-    subtract: (root, callback) => {
-        const result = subtract(root.request.operand1, root.request.operand2);
-        callback(null, { value: result });
-    },
-    squareRoot: (root, callback) => {
-        const result = squareRoot(root.request.value);
-        callback(null, { value: result });
-    },
+  add: (root, callback) => {
+    const result = add(root.request.operand1, root.request.operand2);
+    callback(null, { value: result });
+  },
+  divide: (root, callback) => {
+    const result = divide(root.request.operand1, root.request.operand2);
+    callback(null, { value: result });
+  },
+  multiply: (root, callback) => {
+    const result = multiply(root.request.operand1, root.request.operand2);
+    callback(null, { value: result });
+  },
+  subtract: (root, callback) => {
+    const result = subtract(root.request.operand1, root.request.operand2);
+    callback(null, { value: result });
+  },
+  squareRoot: (root, callback) => {
+    const result = squareRoot(root.request.value);
+    callback(null, { value: result });
+  },
 });
 
 server.bindAsync(
-    `${host}:${port}`,
-    grpc.ServerCredentials.createInsecure(),
-    (err, port) => {
-        if (err) throw err;
+  `${host}:${port}`,
+  grpc.ServerCredentials.createInsecure(),
+  (err, port) => {
+    if (err) throw err;
 
-        server.start();
-        console.log(`Producer running at http://${host}:${port}`);
-    }
+    server.start();
+    console.log(`Producer running at http://${host}:${port}`);
+  }
 );
