@@ -16,7 +16,7 @@
     "prettier": "^2.5.1"
   },
   "dependencies": {
-    "@grpc/grpc-js": "^1.6.8",
+    "@grpc/grpc-js": "^1.8.22",
     "@grpc/proto-loader": "^0.7.0",
     "concurrently": "^7.6.0",
     "fastify": "^3.27.3",
