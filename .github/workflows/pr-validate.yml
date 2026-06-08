@@ -25,3 +25,9 @@ jobs:
       run: npm run lint
     - name: Run tests
       run: npm test
+      env:
+        NODE_ENV: test
+        PRODUCER_HOST: 127.0.0.1
+        PRODUCER_PORT: 4000
+        CONSUMER_HOST: 127.0.0.1
+        CONSUMER_PORT: 3000
