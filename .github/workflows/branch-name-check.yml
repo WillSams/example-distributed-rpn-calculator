@@ -1,7 +1,7 @@
 name: Enforce Branch Name Semantics
 on:
   pull_request:
-    branches: ["main"]
+    branches: ["master"]
 jobs:
   lint-branch-name:
     name: Lint Branch Name
