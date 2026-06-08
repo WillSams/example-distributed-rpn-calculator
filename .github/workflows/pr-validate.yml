@@ -1,0 +1,27 @@
+name: Application unit tests
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+permissions:
+  contents: read
+
+jobs:
+  unit-test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18.13.0'
+        cache: 'npm'
+    - name: Install dependencies
+      run: npm ci
+    - name: Lint with ESLint
+      run: npm run lint
+    - name: Run tests
+      run: npm test
