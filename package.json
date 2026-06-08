@@ -6,7 +6,7 @@
     "lint": "eslint . --ignore-pattern 'specs/'",
     "prepare": "husky install",
     "server": "node src/server/app.js",
-    "test": "concurrently --kill-others \"npm run server\" \"sleep 3 && mocha specs/**/*.spec.js --recursive --timeout 10000\""
+    "test": "concurrently --kill-others --success first \"npm run server\" \"sleep 3 && mocha specs/**/*.spec.js --recursive --timeout 10000\""
   },
   "devDependencies": {
     "chai": "^4.3.6",
